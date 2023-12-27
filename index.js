@@ -2,12 +2,15 @@ import express from 'express';
 import fetch from 'node-fetch';
 import { MongoClient } from "mongodb";
 import { createApi } from 'unsplash-js';
+import cors from 'cors';
 
 import { createFlickr } from "flickr-sdk"
 import 'dotenv/config'
 
 const app = express()
 const port = process.env.PORT
+
+app.use(cors());
 
 
 global.fetch = fetch;
